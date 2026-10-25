@@ -1,0 +1,872 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8b8ca">
+<title>Happy Karwa Chauth, Manju ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #e83e70;
+  --deep: #a51e50;
+  --ink: #503447;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 18px 12px 100px;
+  font-family: Poppins, Arial, sans-serif;
+  color: var(--ink);
+  background: #f7c3d3;
+  overflow-x: hidden;
+}
+
+/* PERSONAL PHOTO BACKGROUND */
+.photo-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url("photo.jpg.jpg");
+  background-position: center;
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+  background-color: #f7c3d3;
+  filter: blur(1px);
+}
+.photo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255,226,237,.50);
+  pointer-events: none;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .2;
+  background-image: radial-gradient(#fff 1px,transparent 1px);
+  background-size: 28px 28px;
+}
+
+.shell {
+  width: min(100%,520px);
+  margin: 18px auto;
+  position: relative;
+  z-index: 1;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255,250,249,.90);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 26px;
+  padding: 25px 20px;
+  box-shadow: 0 18px 50px #9b315133;
+  backdrop-filter: blur(10px);
+  animation: cardEnter .8s ease both;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #ffd3df;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.top-art {
+  height: 155px;
+  position: relative;
+  margin: -7px -5px 8px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(180deg,#392849 0%,#9f5477 48%,#f7b8b8 100%);
+}
+.top-art::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  height: 80px;
+  bottom: -35px;
+  background: #ffe2d6;
+  border-radius: 50% 50% 0 0;
+}
+.moon {
+  position: absolute;
+  right: 17%;
+  top: 20px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #fff0c9;
+  box-shadow: 0 0 30px #fff0c999;
+  animation: moonGlow 4s ease-in-out infinite;
+}
+.star {
+  position: absolute;
+  color: #fff5d8;
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+.s1 { left: 15%; top: 20%; font-size: 18px; }
+.s2 { left: 35%; top: 48%; font-size: 13px; animation-delay: .8s; }
+.s3 { right: 17%; top: 65%; font-size: 17px; animation-delay: 1.3s; }
+.lantern {
+  position: absolute;
+  top: 0;
+  color: #ffdca1;
+  font-size: 27px;
+  filter: drop-shadow(0 0 8px #ffc46b);
+  transform-origin: top center;
+  animation: sway 3s ease-in-out infinite;
+}
+.l1 { left: 12%; }
+.l2 { right: 9%; animation-delay: 1s; }
+
+/* MY DARLING ANIMATION */
+.darling {
+  font-family: "Great Vibes",cursive;
+  font-size: clamp(2rem,8vw,2.7rem);
+  text-align: center;
+  color: #e83e70;
+  margin: 8px 0 0;
+  text-shadow: 0 0 8px #ffb6ce;
+  animation: darlingGlow 2s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.darling span {
+  display: inline-block;
+  animation: heartBeat 1.2s ease-in-out infinite;
+}
+@keyframes darlingGlow {
+  0%,100% { transform: scale(1); text-shadow: 0 0 8px #ffb6ce; }
+  50% { transform: scale(1.06); text-shadow: 0 0 18px #ff7fa8,0 0 30px #ffb6ce; }
+}
+@keyframes heartBeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+h1 {
+  font-family: "Great Vibes",cursive;
+  font-size: clamp(2.4rem,10vw,3.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--deep);
+  margin: 8px 0 5px;
+}
+.name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--pink);
+  margin: 10px 0;
+}
+.intro {
+  font-size: .88rem;
+  line-height: 1.9;
+  color: #6e5363;
+  margin: 12px auto 18px;
+  max-width: 390px;
+}
+.heart-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--pink);
+  margin: 16px auto;
+}
+.heart-divider::before,.heart-divider::after {
+  content: "";
+  width: 54px;
+  height: 1px;
+  background: #f2a0b7;
+}
+
+/* GIFT BOX */
+.gift {
+  position: relative;
+  text-align: left;
+  margin: 20px 0 16px;
+  border: 1px solid #ffb8cb;
+  border-radius: 17px;
+  background: linear-gradient(135deg,#fff5f5,#ffe8ef);
+  overflow: hidden;
+  box-shadow: 0 7px 20px #d93b6a0c;
+  transition: transform .3s,box-shadow .3s;
+}
+.gift.open {
+  box-shadow: 0 8px 25px #d93b6a25;
+  animation: romanticOpen .65s ease;
+  border-color: #f06b98;
+}
+@keyframes romanticOpen {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.025) rotate(-.5deg); }
+  70% { transform: scale(1.01) rotate(.5deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+.gift-toggle {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 16px 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  color: var(--deep);
+  font: 600 .88rem Poppins,Arial,sans-serif;
+  cursor: pointer;
+}
+.gift-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gift-icon { font-size: 1.35rem; }
+.gift.open .gift-icon {
+  display: inline-block;
+  animation: giftIconPop .65s ease;
+}
+@keyframes giftIconPop {
+  0% { transform: scale(.5) rotate(-25deg); }
+  60% { transform: scale(1.4) rotate(12deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+.hint {
+  white-space: nowrap;
+  background: #ffc2d1;
+  color: #8d2049;
+  border-radius: 30px;
+  padding: 7px 9px;
+  font-size: .68rem;
+  font-weight: 500;
+}
+.gift-content {
+  display: none;
+  padding: 0 16px 17px;
+  font-size: .88rem;
+  line-height: 1.9;
+  animation: fadeUp .4s ease;
+}
+.gift.open .gift-content { display: block; }
+.gift.open .hint { background: var(--pink); color: white; }
+
+/* FLOWERS, ROSES AND HEARTS */
+.falling-flower {
+  position: fixed;
+  top: -50px;
+  z-index: 30;
+  pointer-events: none;
+  user-select: none;
+  animation: flowerFall var(--duration,4s) ease-in forwards;
+  filter: drop-shadow(0 3px 5px #e83e7040);
+  will-change: transform,opacity;
+}
+@keyframes flowerFall {
+  0% {
+    transform: translate3d(0,-5vh,0) rotate(0deg) scale(.5);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+    transform: translate3d(12px,8vh,0) rotate(35deg) scale(1);
+  }
+  55% {
+    transform: translate3d(-20px,55vh,0) rotate(180deg) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(25px,115vh,0) rotate(360deg) scale(.7);
+    opacity: 0;
+  }
+}
+
+.btn {
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 21px;
+  background: linear-gradient(110deg,#f04a7c,#d91d5a);
+  color: white;
+  font: 600 .88rem Poppins,Arial,sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 20px #d91d5a32;
+  transition: transform .2s;
+}
+.btn:active { transform: scale(.96); }
+.btn.secondary {
+  background: #ffe4eb;
+  color: #9b2850;
+  box-shadow: none;
+}
+.btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.page { display: none; animation: fadeUp .5s ease; }
+.page.active { display: block; }
+.page-title {
+  font-family: "Great Vibes",cursive;
+  font-size: 2.7rem;
+  color: var(--deep);
+  margin: 10px 0 0;
+  font-weight: 400;
+}
+.sub { font-size: .85rem; margin: 6px 0; color: #79586c; }
+
+.quiz {
+  margin-top: 20px;
+  padding: 16px 13px;
+  border-radius: 18px;
+  background: linear-gradient(135deg,#fff0f7,#fce9fa);
+  border: 1px solid #f1c6e2;
+  text-align: left;
+}
+.quiz h3 { font-size: 1rem; color: #a32160; margin: 0 0 7px; }
+.quiz-intro {
+  font-size: .82rem;
+  line-height: 1.8;
+  margin: 0 0 12px;
+  color: #76586b;
+}
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-align: left;
+  padding: 11px 10px;
+  margin: 8px 0;
+  border: 1px solid #f5b9d1;
+  border-radius: 12px;
+  background: #fffafc;
+  color: #503447;
+  font: 400 .80rem/1.65 Poppins,Arial,sans-serif;
+  cursor: pointer;
+}
+.option .arrow { margin-left: auto; color: var(--pink); font-size: 1.1rem; }
+.answer {
+  display: none;
+  background: #fff;
+  padding: 10px 12px;
+  margin: -2px 4px 8px;
+  border-left: 3px solid #e94a7c;
+  border-radius: 7px;
+  font-size: .81rem;
+  line-height: 1.8;
+  color: #8b2851;
+  animation: fadeUp .3s ease;
+}
+.option-wrap.open .answer { display: block; }
+.footer { font-size: .82rem; line-height: 1.9; margin: 20px 0 3px; }
+.signature {
+  font-family: "Great Vibes",cursive;
+  font-size: 2.2rem;
+  color: var(--deep);
+  margin: 4px 0;
+}
+
+/* MUSIC CONTROL */
+.music {
+  position: fixed;
+  z-index: 10;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(94%,410px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(65, 37, 63, 0.203);
+  color: white;
+  border: 1px solid #ffffff80;
+  border-radius: 40px;
+  box-shadow: 0 8px 28px #6d244355;
+  backdrop-filter: blur(10px);
+}
+.music-note { font-size: 1.3rem; flex-shrink: 0; }
+.music-label { font-size: .75rem; flex: 1; min-width: 0; }
+.music small {
+  font-size: .63rem;
+  color: #f7dce7;
+  display: block;
+  margin-top: 3px;
+}
+.music button {
+  border: 0;
+  border-radius: 30px;
+  padding: 11px 13px;
+  background: #ffd7e2;
+  color: #8c2049;
+  font: 600 .75rem Poppins,Arial,sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* FLOATING HEARTS */
+.float-heart {
+  position: fixed;
+  z-index: 0;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  opacity: .8;
+}
+
+/* OPENING SURPRISE */
+.surprise {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(54,25,52,.78);
+  backdrop-filter: blur(8px);
+  transition: opacity .5s,visibility .5s;
+}
+.surprise.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.surprise-box {
+  width: min(100%,340px);
+  padding: 28px 20px;
+  border-radius: 25px;
+  text-align: center;
+  color: var(--deep);
+  background: linear-gradient(145deg,#fff9fa,#ffe2ed);
+  border: 1px solid white;
+  box-shadow: 0 20px 60px #0003;
+  animation: giftPop .7s cubic-bezier(.2,.8,.3,1.3);
+}
+.surprise-emoji {
+  font-size: 4rem;
+  display: block;
+  animation: giftBounce 2s ease-in-out infinite;
+}
+.surprise-box h2 {
+  font-family: "Great Vibes",cursive;
+  font-size: 2.7rem;
+  font-weight: 400;
+  margin: 10px 0;
+}
+.surprise-box p { font-size: .86rem; line-height: 1.8; color: #79586c; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(18px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes giftPop {
+  from { opacity: 0; transform: scale(.65) rotate(-5deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+@keyframes giftBounce {
+  0%,100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-8px) rotate(4deg); }
+}
+@keyframes floatUp {
+  to { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+@keyframes twinkle {
+  0%,100% { opacity: .4; transform: scale(.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+@keyframes moonGlow {
+  0%,100% { box-shadow: 0 0 20px #fff0c966; }
+  50% { box-shadow: 0 0 40px #fff0c9bb; }
+}
+@keyframes sway {
+  0%,100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@media (min-width:600px) {
+  body { padding-top: 30px; }
+  .card { padding: 30px 28px; }
+  .top-art { height: 165px; }
+}
+@media (max-width:380px) {
+  .card { padding: 22px 14px; }
+  .gift-toggle { padding: 14px 9px; gap: 5px; font-size: .79rem; }
+  .hint { padding: 6px 7px; font-size: .62rem; }
+  .music { gap: 7px; padding: 9px; }
+  .music button { padding: 10px; font-size: .69rem; }
+  .music-label { font-size: .69rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="photo-bg" aria-hidden="true"></div>
+<div class="photo-overlay" aria-hidden="true"></div>
+
+<!-- FIRST OPENING SURPRISE -->
+<div class="surprise" id="surprise">
+  <div class="surprise-box">
+    <span class="surprise-emoji">🎁</span>
+    <h2>For You, Manju ❤️</h2>
+    <p>Ek chhota sa surprise hai aapke liye...<br>
+    Is dil ki baat sunne ke liye taiyaar hain? 🥰</p>
+    <button class="btn" onclick="openSurprise()">
+      Open Your Surprise 💖
+    </button>
+  </div>
+</div>
+
+<main class="shell card">
+
+  <!-- PAGE ONE -->
+  <section id="page1" class="page active">
+
+    <div class="top-art" aria-hidden="true">
+      <div class="moon"></div>
+      <span class="star s1">✦</span>
+      <span class="star s2">✧</span>
+      <span class="star s3">✦</span>
+      <span class="lantern l1">🏮</span>
+      <span class="lantern l2">🏮</span>
+    </div>
+
+    <div class="darling">My Darling <span>❤️</span></div>
+
+    <h1>Happy Karwa Chauth</h1>
+    <div class="name">✨ Manju 💕 Rohit ✨</div>
+    <div class="heart-divider">♥</div>
+
+    <p class="intro">
+      Hum sirf ek baar mile hain, par sach toh yeh hai ki
+      yeh khoobsurat kahaani abhi toh shuru hui hai... 🤗❤️
+    </p>
+
+    <div class="gift" id="gift1">
+      <button class="gift-toggle" aria-expanded="false"
+        onclick="toggleGift('gift1')">
+        <span class="gift-title">
+          <span class="gift-icon">🎁</span>
+          <span>Pehli Mulakat ki Yaadein 🤗</span>
+        </span>
+        <span class="hint">Tap to Open ↓</span>
+      </button>
+      <div class="gift-content">
+        <p>
+          Jab hum pehli baar mile the, toh mulaqat chhoti si thi,
+          lekin mere dil mein ek gehra ehsaas chhod gayi.
+          Ek hi baar sahi, par uss din laga ki aane wala safar
+          bahut khaas hone wala hai. ❤️
+        </p>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn" onclick="showPage(2)">Aage Badhein ➜</button>
+    </div>
+  </section>
+
+  <!-- PAGE TWO -->
+  <section id="page2" class="page">
+
+    <div class="top-art" aria-hidden="true">
+      <div class="moon"></div>
+      <span class="star s1">✦</span>
+      <span class="star s2">✧</span>
+      <span class="star s3">✦</span>
+      <span class="lantern l1">🏮</span>
+      <span class="lantern l2">🏮</span>
+    </div>
+
+    <h2 class="page-title">Karwa Chauth Special 🌙</h2>
+    <p class="sub">Ek chhota sa sandesh, sirf aapke liye...</p>
+    <div class="heart-divider">♥</div>
+
+    <div class="gift" id="gift2">
+      <button class="gift-toggle" aria-expanded="false"
+        onclick="toggleGift('gift2')">
+        <span class="gift-title">
+          <span class="gift-icon">❤️</span>
+          <span>Vrat aur Hamara Safar</span>
+        </span>
+        <span class="hint">Tap to Open ↓</span>
+      </button>
+      <div class="gift-content">
+        <p>
+          Aaj aapka yeh pehla vrat hai. Hum abhi zyada nahi mile hain,
+          lekin main chahta hoon ki aapko yeh mehsoos ho ki door rehkar
+          bhi koi aapki khushi aur lambi umar ki dua maang raha hai.
+          Vrat achhe se rakhiyega aur apni health ka poora dhyan
+          rakhiyega. ☺️❤️
+        </p>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <h3>💌 Ek chhota sa secret</h3>
+      <p class="quiz-intro">
+        Hamare arranged marriage ke safar mein aapke baare mein
+        sochkar mere mann mein kya aata hai? Kisi bhi line par
+        tap karke dekhiye. 💕
+      </p>
+
+      <div class="option-wrap">
+        <button class="option" aria-expanded="false" onclick="toggleAnswer(this)">
+          <span>🔍</span>
+          <span>Kitni kismat wala hoon main, jo aap mili hain.</span>
+          <span class="arrow">›</span>
+        </button>
+        <div class="answer">Sach mein, aapka milna mere liye kisi blessing se kam nahi hai. ✨</div>
+      </div>
+
+      <div class="option-wrap">
+        <button class="option" aria-expanded="false" onclick="toggleAnswer(this)">
+          <span>☕</span>
+          <span>Jald hi saath baithkar chai ke saath lambi baatein hongi.</span>
+          <span class="arrow">›</span>
+        </button>
+        <div class="answer">Haan ji! Agli mulaqat par dher saari baatein aur chai. Main uss pal ka intezaar kar raha hoon. ☕❤️</div>
+      </div>
+
+      <div class="option-wrap">
+        <button class="option" aria-expanded="false" onclick="toggleAnswer(this)">
+          <span>❤️</span>
+          <span>Abhi bas ek baar mile hain, par poori umar baaki hai.</span>
+          <span class="arrow">›</span>
+        </button>
+        <div class="answer">Pehli mulaqat toh bas shuruaat thi; asli kahaani toh abhi likhi jaani baaki hai. 🥰</div>
+      </div>
+
+      <div class="option-wrap">
+        <button class="option" aria-expanded="false" onclick="toggleAnswer(this)">
+          <span>🤗</span>
+          <span>Hamesha saath rahein aur thodi nok-jhok bhi ho.</span>
+          <span class="arrow">›</span>
+        </button>
+        <div class="answer">Bilkul Madam ji! Aapke saath rahunga, thodi ladai bhi karunga aur aapko kabhi bor nahi hone dunga. 😅💕</div>
+      </div>
+
+      <div class="option-wrap">
+        <button class="option" aria-expanded="false" onclick="toggleAnswer(this)">
+          <span>🌟</span>
+          <span>Sachme pyar too nhi ho gaya ?</span>
+          <span class="arrow">›</span>
+        </button>
+        <div class="answer">Bilkul Baby🌟 I'm in love withyou 🥰 I LOVE YOU BETU. Aapke aane se yeh safar aur bhi khoobsurat ho gaya hai❤️</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Jald hi milte hain, is naye aur khoobsurat safar ko aage
+      badhane ke liye. ❤️
+      <div class="signature">Rohit 💕 Betu</div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn secondary" onclick="showPage(1)">← Peeche Jayein</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- BACKGROUND SONG + POEM -->
+<div class="music" role="group" aria-label="Song and poem controls">
+  <span class="music-note">💕</span>
+  <div class="music-label">
+    <div>For You, Manju ❤️</div>
+    <small id="musicStatus">Your special song is ready ❤️</small>
+  </div>
+  <button id="musicButton" aria-label="Start the poem" onclick="toggleMusic()">
+    ▶ Start the Poem
+  </button>
+</div>
+
+<!-- FIRST SONG -->
+<audio id="introSong" preload="auto">
+  <source src="song2.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- POEM AUDIO -->
+<audio id="bgMusic" preload="auto">
+  <source src="song.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* SURPRISE BOX */
+function openSurprise() {
+  document.getElementById("surprise").classList.add("hidden");
+
+  // Agar autoplay block hua tha, user ke click par song try karein.
+  startIntroSong();
+}
+
+function showPage(n) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+  document.getElementById("page" + n).classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* FLOWER SHOWER ON GIFT OPEN */
+function flowerShower() {
+  const flowers = ["🌹","🌸","🌺","🌷","💗","💕","✨","❤️"];
+  const total = window.innerWidth < 600 ? 32 : 50;
+
+  for (let i = 0; i < total; i++) {
+    const flower = document.createElement("span");
+    flower.className = "falling-flower";
+    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.fontSize = (16 + Math.random() * 20) + "px";
+    flower.style.setProperty("--duration", (3 + Math.random() * 3) + "s");
+    flower.style.animationDelay = (Math.random() * 1.2) + "s";
+
+    document.body.appendChild(flower);
+
+    flower.addEventListener("animationend", () => {
+      flower.remove();
+    }, { once: true });
+  }
+}
+
+function toggleGift(id) {
+  const gift = document.getElementById(id);
+  const opened = gift.classList.toggle("open");
+  const button = gift.querySelector(".gift-toggle");
+
+  button.setAttribute("aria-expanded", String(opened));
+  button.querySelector(".hint").textContent =
+    opened ? "💖 Opened ↑" : "Tap to Open ↓";
+
+  if (opened) flowerShower();
+}
+
+function toggleAnswer(button) {
+  const wrap = button.parentElement;
+  const opened = wrap.classList.toggle("open");
+  button.setAttribute("aria-expanded", String(opened));
+}
+
+/* MUSIC CONTROL */
+const introSong = document.getElementById("introSong");
+const music = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+
+let introStarted = false;
+let poemStarted = false;
+
+/* Website open hone par pehla song play karne ki koshish */
+async function startIntroSong() {
+  if (introStarted || poemStarted) return;
+
+  try {
+    await introSong.play();
+    introStarted = true;
+    musicStatus.textContent = "Playing your special song ❤️";
+  } catch (error) {
+    musicStatus.textContent =
+      "Tap Open Your Surprise to play the song ❤️";
+  }
+}
+
+/* Pehla song khatam hone par poem automatic nahi chalegi */
+introSong.addEventListener("ended", () => {
+  musicStatus.textContent = "Your poem is ready 💌";
+});
+
+/* Sirf button dabane par poem start hogi */
+async function toggleMusic() {
+  // Agar pehla song chal raha hai toh use rok dein.
+  if (!poemStarted) {
+    poemStarted = true;
+    introSong.pause();
+    introSong.currentTime = 0;
+  }
+
+  // Poem paused hai toh play/resume karein.
+  if (music.paused) {
+    try {
+      await music.play();
+
+      musicButton.textContent = "Ⅱ Pause Poem";
+      musicButton.setAttribute("aria-label", "Pause the poem");
+      musicStatus.textContent = "Playing your poem ❤️";
+    } catch (error) {
+      musicButton.textContent = "▶ Start the Poem";
+      musicButton.setAttribute("aria-label", "Start the poem");
+      musicStatus.textContent = "Tap Start the Poem to play ❤️";
+    }
+  } else {
+    // Poem chal rahi hai toh pause karein.
+    music.pause();
+
+    musicButton.textContent = "▶ Start the Poem";
+    musicButton.setAttribute("aria-label", "Start the poem");
+    musicStatus.textContent = "Paused — tap to continue ❤️";
+  }
+}
+
+/* Page load par pehla song try karein.
+   Is event mein poem ko play karne ka koi code nahi hai. */
+window.addEventListener("load", () => {
+  startIntroSong();
+});
+
+/* FLOATING HEARTS AND SPARKLES */
+let lastHeart = 0;
+
+function createHeart() {
+  const now = Date.now();
+  if (now - lastHeart < 900) return;
+  lastHeart = now;
+
+  const el = document.createElement("span");
+  el.className = "float-heart";
+  el.textContent = Math.random() > .5 ? "♥" : "✦";
+  el.style.left = (Math.random() * 94 + 3) + "vw";
+  el.style.fontSize = (12 + Math.random() * 13) + "px";
+  el.style.color = Math.random() > .5 ? "#e83e70" : "#fff5c9";
+  el.style.animationDuration = (7 + Math.random() * 4) + "s";
+
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 11500);
+}
+
+setInterval(createHeart, 1400);
+</script>
+
+</body>
+</html>
